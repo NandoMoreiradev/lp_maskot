@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { WhatsappLogo, Sparkle, ArrowRight, ShieldCheck, CalendarCheck } from 'phosphor-react'
 import { PhoneMockup } from './PhoneMockup'
-import { Reveal } from './Reveal'
-import { buildWhatsappUrl, DEFAULT_CTA_MESSAGE } from '../lib/whatsapp'
-import { trackWhatsappClick } from '../lib/tracking'
+import { Reveal } from '../../components/Reveal'
+import { buildWhatsappUrl, DEFAULT_CTA_MESSAGE } from '../../lib/whatsapp'
+import { trackWhatsappClick } from '../../lib/tracking'
 
 const Section = styled.section`
     padding: 4.5rem 0 3.75rem;

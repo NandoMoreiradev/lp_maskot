@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Gift, CheckCircle } from 'phosphor-react'
-import { Reveal } from './Reveal'
+import { Reveal } from '../../components/Reveal'
 
 const Section = styled.section`
     padding: 5.5rem 0;

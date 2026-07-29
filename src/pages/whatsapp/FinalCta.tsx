@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { WhatsappLogo } from 'phosphor-react'
-import { Reveal } from './Reveal'
-import { buildWhatsappUrl, DEFAULT_CTA_MESSAGE } from '../lib/whatsapp'
-import { trackWhatsappClick } from '../lib/tracking'
+import { Reveal } from '../../components/Reveal'
+import { buildWhatsappUrl, DEFAULT_CTA_MESSAGE } from '../../lib/whatsapp'
+import { trackWhatsappClick } from '../../lib/tracking'
 
 const Section = styled.section`
     background: var(--ink);

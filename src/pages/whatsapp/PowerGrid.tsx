@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { ShieldCheck, CalendarCheck, Star, Paperclip } from 'phosphor-react'
-import { Reveal } from './Reveal'
-import { SectionHead, Kicker } from './shared'
+import { Reveal } from '../../components/Reveal'
+import { SectionHead, Kicker } from '../../components/shared'
 
 const Wrap = styled.section`
     background: var(--paper-raised);

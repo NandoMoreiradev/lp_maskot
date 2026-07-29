@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { CheckCircle, Lightning, Archive, BellRinging } from 'phosphor-react'
-import { Reveal } from './Reveal'
-import { SectionHead, Kicker, SectionTitle, SectionSub } from './shared'
+import { Reveal } from '../../components/Reveal'
+import { SectionHead, Kicker, SectionTitle, SectionSub } from '../../components/shared'
 
 const Section = styled.section`
     padding: 5.25rem 0;

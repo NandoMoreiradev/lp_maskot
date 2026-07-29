@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { ArrowsClockwise, Robot, Funnel, Lightning, ChartLineUp, CheckCircle, WhatsappLogo, InstagramLogo, FacebookLogo, NotePencil, Sparkle, Microphone } from 'phosphor-react'
-import { Reveal } from './Reveal'
-import { SectionHead, Kicker, SectionTitle, SectionSub, VisualCard, ChipRow, Chip, StatGrid, StatCard, Heat } from './shared'
+import { Reveal } from '../../components/Reveal'
+import { SectionHead, Kicker, SectionTitle, SectionSub, VisualCard, ChipRow, Chip, StatGrid, StatCard, Heat } from '../../components/shared'
 
 const Rail = styled.div`
     position: relative;
