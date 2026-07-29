@@ -19,9 +19,14 @@ const Inner = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 0.75rem;
     padding: 0.9rem 1.75rem;
     max-width: 1180px;
     margin: 0 auto;
+
+    @media (max-width: 560px) {
+        padding: 0.7rem 1.1rem;
+    }
 `
 
 const LogoLink = styled(Link)`
@@ -33,6 +38,10 @@ const LogoImg = styled.img`
     height: 46px;
     width: auto;
     display: block;
+
+    @media (max-width: 560px) {
+        height: 34px;
+    }
 `
 
 const LogoLight = styled(LogoImg)`
@@ -62,6 +71,19 @@ const Cta = styled.button`
     border: none;
     cursor: pointer;
     box-shadow: var(--shadow-md);
+    flex-shrink: 0;
+    white-space: nowrap;
+
+    @media (max-width: 560px) {
+        font-size: 0.72rem;
+        padding: 0.5rem 0.8rem;
+        gap: 0.35rem;
+    }
+
+    @media (max-width: 360px) {
+        font-size: 0.66rem;
+        padding: 0.45rem 0.65rem;
+    }
 `
 
 function handleClick() {

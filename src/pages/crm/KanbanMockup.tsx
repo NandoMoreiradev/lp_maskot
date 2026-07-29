@@ -7,7 +7,12 @@ const Card = styled.div`
     box-shadow: var(--shadow-lg);
     padding: 1.1rem;
     max-width: 460px;
+    width: 100%;
     margin: 0 auto;
+
+    @media (max-width: 380px) {
+        padding: 0.75rem;
+    }
 `
 
 const Head = styled.div`
@@ -39,8 +44,12 @@ const Title = styled.span`
 
 const Cols = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.7rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+
+    @media (max-width: 380px) {
+        gap: 0.35rem;
+    }
 `
 
 const ColHead = styled.div`
@@ -52,7 +61,12 @@ const ColHead = styled.div`
     margin-bottom: 0.55rem;
     display: flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0.3rem;
+    overflow-wrap: break-word;
+
+    @media (max-width: 380px) {
+        font-size: 0.6rem;
+    }
 
     span {
         background: var(--chip-bg);
@@ -60,6 +74,7 @@ const ColHead = styled.div`
         border-radius: 100px;
         padding: 0.05rem 0.4rem;
         font-size: 0.65rem;
+        flex-shrink: 0;
     }
 `
 
@@ -71,6 +86,13 @@ const KCard = styled.div<{ $drag?: boolean; $done?: boolean }>`
     margin-bottom: 0.55rem;
     font-size: 0.72rem;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    overflow-wrap: break-word;
+    min-width: 0;
+
+    @media (max-width: 380px) {
+        font-size: 0.64rem;
+        padding: 0.45rem 0.5rem;
+    }
 
     .name {
         font-weight: 700;

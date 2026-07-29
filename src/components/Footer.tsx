@@ -38,7 +38,7 @@ export function Footer() {
                 <Inner>
                     <Badge>
                         <ShieldCheck size={16} weight="regular" />
-                        Maskot Educação — CRM para captação de alunos
+                        © 2026 Maskot EDU. Todos os direitos reservados.
                     </Badge>
                     <Link href="https://www.maskotedu.com.br/legal/politica-de-privacidade" target="_blank" rel="noopener noreferrer">
                         Política de Privacidade
