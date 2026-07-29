@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { WhatsappLogo } from 'phosphor-react'
 import { buildWhatsappUrl, DEFAULT_CTA_MESSAGE } from '../lib/whatsapp'
 import { trackWhatsappClick } from '../lib/tracking'
@@ -23,7 +24,7 @@ const Inner = styled.div`
     margin: 0 auto;
 `
 
-const LogoLink = styled.a`
+const LogoLink = styled(Link)`
     display: flex;
     align-items: center;
 `
@@ -72,7 +73,7 @@ export function Header() {
     return (
         <Bar>
             <Inner>
-                <LogoLink href="https://www.maskotedu.com.br" aria-label="Maskot">
+                <LogoLink to="/" aria-label="Maskot">
                     <LogoLight src={logoColor} alt="Maskot Edu" />
                     <LogoDark src={logoOnDark} alt="Maskot Edu" />
                 </LogoLink>
