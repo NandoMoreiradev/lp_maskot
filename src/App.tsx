@@ -3,6 +3,8 @@ import { Layout } from './layout/Layout'
 import { WhatsappPage } from './pages/whatsapp/WhatsappPage'
 import { CrmPage } from './pages/crm/CrmPage'
 import { MasterclassPage } from './pages/masterclass/MasterclassPage'
+import { CapturaPage } from './pages/captura/CapturaPage'
+import { PlaybookPage } from './pages/playbook/PlaybookPage'
 
 export default function App() {
     return (
@@ -12,6 +14,8 @@ export default function App() {
                     <Route path="/" element={<CrmPage />} />
                     <Route path="/whatsapp" element={<WhatsappPage />} />
                     <Route path="/masterclass" element={<MasterclassPage />} />
+                    <Route path="/protocolo-matriculas" element={<CapturaPage />} />
+                    <Route path="/playbook" element={<PlaybookPage />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Route>
             </Routes>

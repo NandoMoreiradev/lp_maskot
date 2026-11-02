@@ -6,7 +6,7 @@ import { FloatingWhatsapp } from '../components/FloatingWhatsapp'
 import { CookieConsent } from '../components/CookieConsent'
 
 // Rotas focadas em conversão, sem o cabeçalho de navegação.
-const ROUTES_WITHOUT_HEADER = ['/masterclass']
+const ROUTES_WITHOUT_HEADER = ['/masterclass', '/protocolo-matriculas', '/playbook']
 
 export function Layout() {
     const { pathname } = useLocation()
