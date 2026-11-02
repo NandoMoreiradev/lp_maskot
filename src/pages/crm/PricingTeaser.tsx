@@ -85,7 +85,7 @@ const PLANS = [
 
 export function PricingTeaser() {
     return (
-        <Section>
+        <Section id="precos">
             <div className="wrap">
                 <Reveal>
                     <Head>
