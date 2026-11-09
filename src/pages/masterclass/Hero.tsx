@@ -6,8 +6,12 @@ import { trackWhatsappClick } from '../../lib/tracking'
 // Cole aqui:
 // 1. O caminho do arquivo .mp4 colocado na pasta 'public/' (ex.: '/masterclass.mp4')
 // 2. Ou o link de embed final (ex.: https://www.youtube.com/embed/ID ou https://player.vimeo.com/video/ID).
+// Parâmetros comuns do YouTube:
+// - autoplay=1: inicia automaticamente
+// - controls=0: oculta a barra de controles
+// - mute=1: inicia mudo (necessário na maioria dos navegadores para liberar o autoplay)
 // Enquanto estiver vazio, o player mostra o placeholder.
-const VIDEO_URL: string = 'https://www.youtube.com/embed/wd_-jXEDqCA'
+const VIDEO_URL: string = 'https://www.youtube.com/embed/wd_-jXEDqCA?autoplay=1&controls=0'
 
 const CTA_MESSAGE = 'Olá! Assisti à Masterclass do Maskot Edu e quero ver como implementar na minha escola.'
 
@@ -245,7 +249,8 @@ export function Hero() {
                             VIDEO_URL.endsWith('.mp4') || VIDEO_URL.includes('.mp4?') ? (
                                 <video
                                     src={VIDEO_URL}
-                                    controls
+                                    autoPlay
+                                    muted
                                     playsInline
                                     preload="metadata"
                                 />
