@@ -3,9 +3,11 @@ import { WhatsappLogo, PlayCircle, ArrowRight, GraduationCap } from 'phosphor-re
 import { buildWhatsappUrl } from '../../lib/whatsapp'
 import { trackWhatsappClick } from '../../lib/tracking'
 
-// Cole aqui o link de embed final (ex.: https://www.youtube.com/embed/ID ou https://player.vimeo.com/video/ID).
+// Cole aqui:
+// 1. O caminho do arquivo .mp4 colocado na pasta 'public/' (ex.: '/masterclass.mp4')
+// 2. Ou o link de embed final (ex.: https://www.youtube.com/embed/ID ou https://player.vimeo.com/video/ID).
 // Enquanto estiver vazio, o player mostra o placeholder.
-const VIDEO_EMBED_URL = ''
+const VIDEO_URL: string = 'https://www.youtube.com/embed/wd_-jXEDqCA'
 
 const CTA_MESSAGE = 'Olá! Assisti à Masterclass do Maskot Edu e quero ver como implementar na minha escola.'
 
@@ -93,12 +95,15 @@ const Player = styled.div`
     background: var(--ink);
     overflow: hidden;
 
-    iframe {
+    iframe,
+    video {
         position: absolute;
         inset: 0;
         width: 100%;
         height: 100%;
         border: 0;
+        object-fit: contain;
+        background: #000;
     }
 `
 
@@ -236,13 +241,22 @@ export function Hero() {
                     </Sub>
 
                     <Player>
-                        {VIDEO_EMBED_URL ? (
-                            <iframe
-                                src={VIDEO_EMBED_URL}
-                                title="Masterclass Maskot Edu"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                                allowFullScreen
-                            />
+                        {VIDEO_URL ? (
+                            VIDEO_URL.endsWith('.mp4') || VIDEO_URL.includes('.mp4?') ? (
+                                <video
+                                    src={VIDEO_URL}
+                                    controls
+                                    playsInline
+                                    preload="metadata"
+                                />
+                            ) : (
+                                <iframe
+                                    src={VIDEO_URL}
+                                    title="Masterclass Maskot Edu"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                                    allowFullScreen
+                                />
+                            )
                         ) : (
                             <Placeholder>
                                 <PlayCircle size={72} weight="fill" />
