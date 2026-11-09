@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { WhatsappLogo, PlayCircle, ArrowRight, GraduationCap } from 'phosphor-react'
-import { buildWhatsappUrl } from '../../lib/whatsapp'
+import { buildWhatsappUrl, MASTERCLASS_DEFAULT_NUMBER } from '../../lib/whatsapp'
 import { trackWhatsappClick } from '../../lib/tracking'
 
 // Cole aqui:
@@ -222,7 +222,7 @@ const SecondaryLink = styled.a`
 
 function handleCtaClick() {
     trackWhatsappClick()
-    window.open(buildWhatsappUrl(CTA_MESSAGE), '_blank', 'noopener')
+    window.open(buildWhatsappUrl(CTA_MESSAGE, MASTERCLASS_DEFAULT_NUMBER), '_blank', 'noopener')
 }
 
 export function Hero() {

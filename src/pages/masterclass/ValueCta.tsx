@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { WhatsappLogo, Check, Calculator, ArrowRight } from 'phosphor-react'
 import { Reveal } from '../../components/Reveal'
 import { Kicker } from '../../components/shared'
-import { buildWhatsappUrl } from '../../lib/whatsapp'
+import { buildWhatsappUrl, MASTERCLASS_DEFAULT_NUMBER } from '../../lib/whatsapp'
 import { trackWhatsappClick } from '../../lib/tracking'
 
 const CTA_MESSAGE = 'Olá! Assisti à Masterclass do Maskot Edu e quero ver como implementar na minha escola.'
@@ -175,7 +175,7 @@ const CHECKLIST = [
 
 function handleClick() {
     trackWhatsappClick()
-    window.open(buildWhatsappUrl(CTA_MESSAGE), '_blank', 'noopener')
+    window.open(buildWhatsappUrl(CTA_MESSAGE, MASTERCLASS_DEFAULT_NUMBER), '_blank', 'noopener')
 }
 
 export function ValueCta() {

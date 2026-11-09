@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { DownloadSimple, FilePdf, CheckCircle, PlayCircle, WhatsappLogo, Clock } from 'phosphor-react'
 import { Reveal } from '../../components/Reveal'
 import { usePageMeta } from '../../hooks/usePageMeta'
-import { buildWhatsappUrl } from '../../lib/whatsapp'
+import { buildWhatsappUrl, MASTERCLASS_DEFAULT_NUMBER } from '../../lib/whatsapp'
 import { trackWhatsappClick } from '../../lib/tracking'
 
 // Coloque o arquivo em public/playbook-masterclass-2027.pdf. O botão de download é liberado sozinho quando ele existir.
@@ -279,7 +279,7 @@ function usePdfAvailable(): boolean | null {
 
 function handleWhatsappClick() {
     trackWhatsappClick()
-    window.open(buildWhatsappUrl(CTA_MESSAGE), '_blank', 'noopener')
+    window.open(buildWhatsappUrl(CTA_MESSAGE, MASTERCLASS_DEFAULT_NUMBER), '_blank', 'noopener')
 }
 
 export function PlaybookPage() {

@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components'
+import { useLocation } from 'react-router-dom'
 import { WhatsappLogo } from 'phosphor-react'
-import { buildWhatsappUrl, DEFAULT_CTA_MESSAGE } from '../lib/whatsapp'
+import { buildWhatsappUrl, DEFAULT_CTA_MESSAGE, MASTERCLASS_DEFAULT_NUMBER } from '../lib/whatsapp'
 import { trackWhatsappClick } from '../lib/tracking'
 
 const ring = keyframes`
@@ -49,12 +50,20 @@ const Ring = styled.span`
     }
 `
 
-function handleClick() {
-    trackWhatsappClick()
-    window.open(buildWhatsappUrl(DEFAULT_CTA_MESSAGE), '_blank', 'noopener')
-}
+const MASTERCLASS_CTA_MESSAGE =
+    'Olá! Assisti à Masterclass do Maskot Edu e quero ver como implementar na minha escola.'
 
 export function FloatingWhatsapp() {
+    const { pathname } = useLocation()
+    const isMasterclass = pathname.startsWith('/masterclass')
+
+    function handleClick() {
+        trackWhatsappClick()
+        const message = isMasterclass ? MASTERCLASS_CTA_MESSAGE : DEFAULT_CTA_MESSAGE
+        const number = isMasterclass ? MASTERCLASS_DEFAULT_NUMBER : undefined
+        window.open(buildWhatsappUrl(message, number), '_blank', 'noopener')
+    }
+
     return (
         <Button onClick={handleClick} style={{ position: 'fixed' }} aria-label="Falar no WhatsApp">
             <Ring />
